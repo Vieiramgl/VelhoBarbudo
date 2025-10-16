@@ -497,7 +497,7 @@ footer p {
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 425px) {
 /* ======================== HEADER ======================== */
 header {
    display: flex;
@@ -738,6 +738,7 @@ header a:hover {
 .equipe {
    background-color: var(--color-primary);
    padding-top: 7%;
+   
 }
 
 .equipe h1 {
@@ -769,7 +770,7 @@ header a:hover {
 }
 
 .barbeiro {
-   display: flex;
+   flex-direction: column;
    margin-bottom: 10%;
    align-items: center;
 }
