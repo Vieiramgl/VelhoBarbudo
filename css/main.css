@@ -581,10 +581,10 @@ header a:hover {
 
 .inicio h1 {
    position: absolute;
-   bottom: 5vw;
-   left: 20vw;
+   bottom: 15vw;
+   left: 5vw;
    color: #fff;
-   font-size: 4vw;
+   font-size: 9vw;
    z-index: 3;
    line-height: 0.9;
    font-family: 'Oswald';
@@ -850,9 +850,9 @@ header a:hover {
 
 .agendamento h1 {
    position: absolute;
-   bottom: 9vw;
+   bottom: 15vw;
    left: 5vw;
-   font-size: 4vw;
+   font-size: 10vw;
    z-index: 3;
    line-height: 0.9;
    font-family: 'Oswald';
@@ -865,7 +865,7 @@ header a:hover {
    padding: 1vw 2.5vw;
    bottom: 4vw;
    left: 5%;
-   font-size: 1vw;
+   font-size: 5vw;
    font-family: 'oswald';
 }
 
