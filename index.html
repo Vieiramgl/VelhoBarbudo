@@ -38,7 +38,16 @@
   </header>
 
   <section class="inicio" id="inicio">
-    <img src="img/banner_inicio.png" alt="">
+    <picture>
+  <!-- imagem para telas até 425px -->
+  <source media="(max-width: 425px)" srcset="img/banner_inicio_mobile.png">
+
+  <!-- imagem para telas até 768px -->
+  <source media="(max-width: 768px)" srcset="img/banner_inicio.png">
+
+  <!-- imagem padrão (para telas maiores) -->
+  <img src="img/banner_inicio.png" alt="img/banner_inicio.png">
+</picture>
     <h1>
       <span class="linha-branca">UMA HISTÓRIA</span><br>
       <span class="linha-preta">DE TRABALHO,</span><br>
@@ -306,7 +315,16 @@
 
 
   <section class="agendamento" id="agendamento">
-    <img src="img/banner_agendamento.png" alt="">
+    <picture>
+  <!-- imagem para telas até 425px -->
+  <source media="(max-width: 425px)" srcset="img/banner_agendamento_mobile.png">
+
+  <!-- imagem para telas até 768px -->
+  <source media="(max-width: 768px)" srcset="img/banner_agendamento.png">
+
+  <!-- imagem padrão (para telas maiores) -->
+  <img src="img/banner_agendamento.png" alt="Banner principal">
+</picture>
     <h1>
       <span class="linha-branca">AGENDE O</span><br>
       <span class="linha-preta">SEU HORÁRIO</span><br>
