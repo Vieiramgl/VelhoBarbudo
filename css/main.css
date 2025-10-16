@@ -608,7 +608,7 @@ header a:hover {
 /* ======================== SOBRE ======================== */
 
 .sobre {
-   padding: 0 5%;
+   padding: 0 0%;
    padding-bottom: 7%;
 }
 
@@ -619,12 +619,12 @@ header a:hover {
 
 .paragrafo1 {
    width: 100%;
-   background-color: var(--color-tertiary);
-   padding: 0%;
+   background-color: var(--color-primary);
+   padding: 0%, 5%;
 }
 
 .paragrafo1 p {
-   color: var(--color-quinternary);
+   color: var(--color-tertiary);
    font-size: 4vw;
 }
 
@@ -632,7 +632,7 @@ header a:hover {
    width: 100%;
    background-color: var(--color-secondary);
    padding-left: 0%;
-   font-size: 7vw;
+   font-size: 7.5vw;
    line-height: 0.85;
    font-family: 'Oswald';
    font-weight: 800;
@@ -666,8 +666,10 @@ header a:hover {
 
 .paragrafo2 p {
    color: var(--color-tertiary);
-   font-size: 0.9vw;
+
    justify-content: center;
+   padding: 0 5%;
+   font-size: 4vw;
 }
 
 /* ======================== SERVIÇOS ======================== */
