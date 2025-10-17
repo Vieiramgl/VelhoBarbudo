@@ -927,15 +927,17 @@ footer p {
 
    .agendamento hr {
       border: none;
-      height: 10px;
+      height: 0px;
       background-color: var(--color-primary);
+      display: none;
    }
 
    /* ======================== CONTATO ======================== */
    .contato hr {
       border: none;
-      height: 10px;
+      height: 0px;
       background-color: var(--color-primary);
+      display: none;
    }
 
    .contato {
