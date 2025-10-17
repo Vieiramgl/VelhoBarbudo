@@ -13,8 +13,12 @@
 
 
   <header>
-    <nav>
+    <nav class="navbar">
       <img class="logo" src="img/logo.png" alt="Velho Barbudo">
+
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger">☰</label>
+
       <ul class="menu">
         <li><a href="#inicio">INÍCIO</a></li>
         <li><a href="#sobre">SOBRE</a></li>
@@ -34,8 +38,7 @@
             alt="Youtube"></a>
       </div>
 
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="hamburger">☰</label>
+
 
     </nav>
   </header>
@@ -379,7 +382,15 @@
     <p>© 2025 Velho Barbudo. Todos os direitos reservados.</p>
   </footer>
 
-
+  <script>
+    // fecha o menu sanduíche quando um link dentro de .menu for clicado
+    document.querySelectorAll('.menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        const toggle = document.getElementById('menu-toggle');
+        if (toggle) toggle.checked = false;
+      });
+    });
+  </script>
 </body>
 
 </html>

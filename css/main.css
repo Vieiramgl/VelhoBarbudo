@@ -14,7 +14,13 @@ html {
 /* ======================== SANDUICHE ======================== */
 
 #menu-toggle {
-   display: none;
+   position: absolute;
+   left: -9999px;
+   /* visualmente escondido, mas presente no DOM */
+   top: auto;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
 }
 
 .hamburger {
@@ -514,84 +520,100 @@ footer p {
 
 @media (max-width: 500px) {
 
-   #menu-toggle:checked+.hamburger+ul {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 5%;
-      background-color: var(--color-secondary);
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   }
 
-   .hamburger {
-      display: block;
-      margin-right: 5%;
-   }
 
-   #menu-toggle:checked+.hamburger+ul {
-      display: flex;
-   }
+
+
+
 
 
    /* ======================== HEADER ======================== */
    header {
       display: flex;
-      background-color: var(--color-secondary);
-      padding: 0 5%
-   }
-
-   header .logo {
-      width: 20vw;
-   }
-
-   nav {
-      display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      background-color: var(--color-secondary);
+      padding: 0 4vw;
+      height: 70px;
+      position: relative;
+      box-sizing: border-box;
    }
 
+   /* logo reduzida */
+   header .logo {
+      width: 22vw;
+      height: auto;
+   }
+
+   /* esconde ícones sociais no header */
+   header .social {
+      display: none;
+   }
+
+   /* botão hambúrguer visível */
+   .hamburger {
+      display: block;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--color-tertiary);
+      z-index: 9999;
+      user-select: none;
+   }
+
+   /* garantir que o checkbox fique presente para :checked funcionar */
+   #menu-toggle {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+   }
+
+   /* menu escondido por padrão no mobile */
    .menu {
-      display: flex;
-      gap: 2vw;
+      display: none;
+      flex-direction: column;
+      gap: 0;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 1rem 4vw;
+      position: absolute;
+      top: 70px;
+      /* imediatamente abaixo do header */
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: var(--color-secondary);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      z-index: 9998;
+      box-sizing: border-box;
    }
 
-   header .social {
+   /* mostrar menu quando checkbox for marcado */
+   #menu-toggle:checked~.menu {
       display: flex;
-      gap: 1vw;
-      align-items: center;
-      padding-left: 1vw;
-      display: none !important;
-
    }
 
-   .social img {
-      width: 1vw;
-      transition: all 1s ease;
-      filter: grayscale(0%) brightness(1) invert(0);
+   /* itens do menu em touch-friendly size */
+   .menu li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
    }
 
-   header a {
-      text-decoration: none;
+   .menu li a {
+      display: block;
       color: var(--color-tertiary);
-      font-size: 1px;
-      transition: color 0.5s ease;
+      font-size: 4.5vw;
+      text-decoration: none;
    }
 
-   header a:hover {
-      color: var(--color-quaternary);
+   /* opcional: estilo do close (quando aberto) */
+   #menu-toggle:checked+.hamburger {
+      /* você pode trocar o símbolo via conteúdo ou rotacionar */
+      transform: rotate(90deg);
+      transition: transform .25s ease;
    }
 
-   /* Efeito hover */
-   .social img:hover {
-      filter: brightness(0) saturate(100%) invert(88%) sepia(6%) saturate(168%) hue-rotate(7deg) brightness(94%) contrast(91%);
-   }
 
    /* ======================== INICIO ======================== */
    .inicio {
