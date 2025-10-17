@@ -520,21 +520,14 @@ footer p {
 
 @media (max-width: 500px) {
 
-
-
-
-
-
-
-
    /* ======================== HEADER ======================== */
    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background-color: var(--color-secondary);
-      padding: 0 4vw;
-      height: 70px;
+      padding: 0 5vw;
+      height: 85px;
       position: relative;
       box-sizing: border-box;
    }
@@ -576,9 +569,9 @@ footer p {
       gap: 0;
       list-style: none;
       margin: 0;
-      padding: 1rem 4vw;
+      padding: 0 4vw;
       position: absolute;
-      top: 70px;
+      top: 85px;
       /* imediatamente abaixo do header */
       left: 0;
       right: 0;
