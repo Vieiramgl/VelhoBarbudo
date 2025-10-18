@@ -612,6 +612,13 @@ footer p {
       pointer-events: auto;
    }
 
+      /* opcional: estilo do close (quando aberto) */
+   #menu-toggle:checked+.hamburger {
+      /* você pode trocar o símbolo via conteúdo ou rotacionar */
+      transform: rotate(90deg);
+      transition: transform .25s ease;
+   }
+
 
    /* ======================== INICIO ======================== */
    .inicio {
