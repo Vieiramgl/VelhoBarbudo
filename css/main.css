@@ -402,7 +402,7 @@ header a:hover {
 .contato hr {
    border: none;
    height: 10px;
-   background-color: var(--color-primary);
+   background-color: var(--color-secondary);
 }
 
 .contato {
