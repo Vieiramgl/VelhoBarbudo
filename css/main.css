@@ -733,6 +733,7 @@ header .social {
       width: 50%;
       background-color: var(--color-primary);
       padding: 0%;
+      padding-top: 7%;
    }
 
    .paragrafo1 p {
