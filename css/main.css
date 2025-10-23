@@ -520,7 +520,7 @@ footer p {
 
 @media (max-width: 1000px) {
 
-   /* ======================== HEADER ======================== */
+/* ======================== HEADER ======================== */
 header {
   padding: 0 4vw;
   height: 100px;
@@ -596,9 +596,9 @@ header .social {
 .menu li a {
   display: block;
   color: var(--color-tertiary);
-  font-size: 1.3rem;
+  font-size: 4vw;
   text-decoration: none;
-  padding: 0.8rem 0;
+  padding: 2vw 0;
 }
 
 /* animação do ícone hambúrguer */
@@ -1101,91 +1101,105 @@ header .social {
 @media (max-width: 600px) {
 
    /* ======================== HEADER ======================== */
-   header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: var(--color-secondary);
-      padding: 0 5vw;
-      height: 80px;
-      position: relative;
-      box-sizing: border-box;
-   }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-secondary);
+  padding: 0 5vw;
+  height: 90px;
+  position: relative;
+  box-sizing: border-box;
+}
 
-   /* logo reduzida */
-   header .logo {
-      width: 22vw;
-      height: auto;
-   }
+/* logo reduzida — visível por padrão */
+header .logo {
+  width: 20vw;
+  transition: opacity 0.5s ease; /* suaviza sumir */
+}
 
-   /* esconde ícones sociais no header */
-   header .social {
-      display: none;
-   }
+/* esconde ícones sociais no header */
+header .social {
+  display: none;
+}
 
-   /* botão hambúrguer visível */
-   .hamburger {
-      display: block;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--color-tertiary);
-      z-index: 9999;
-      user-select: none;
-   }
+/* botão hambúrguer visível */
+.hamburger {
+  display: block;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--color-tertiary);
+  z-index: 10001;
+  user-select: none;
+  transition: transform 0.4s ease; /* transição suave da rotação */
+}
 
-   /* garantir que o checkbox fique presente para :checked funcionar */
-   #menu-toggle {
-      position: absolute;
-      left: -9999px;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-   }
+/* checkbox para controlar menu */
+#menu-toggle {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
-   /* menu escondido por padrão no mobile */
-   .menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0 4vw;
-      position: absolute;
-      top: 80px;
-      /* imediatamente abaixo do header */
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: var(--color-secondary);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      z-index: 9998;
-      box-sizing: border-box;
-   }
+/* ======================== MENU (drawer lateral) ======================== */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* desliza da esquerda */
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-secondary);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+  list-style: none;
+  margin: 0;
+  padding: 6rem 4vw 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  z-index: 10000;
 
-   /* mostrar menu quando checkbox for marcado */
-   #menu-toggle:checked~.menu {
-      display: flex;
-   }
+  /* estado inicial: escondido fora da tela */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
-   /* itens do menu em touch-friendly size */
-   .menu li {
-      padding: 0.9rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-   }
+/* mostrar menu quando checkbox for marcado */
+#menu-toggle:checked ~ .menu {
+  transform: translateX(0);
+  opacity: 1;
+}
 
-   .menu li a {
-      display: block;
-      color: var(--color-tertiary);
-      font-size: 4.5vw;
-      text-decoration: none;
-   }
+/* esconder a logo quando menu abrir */
+#menu-toggle:checked ~ header .logo {
+  opacity: 0;
+}
 
-   /* opcional: estilo do close (quando aberto) */
-   #menu-toggle:checked+.hamburger {
-      /* você pode trocar o símbolo via conteúdo ou rotacionar */
-      transform: rotate(90deg);
-      transition: transform .25s ease;
-   }
+/* itens do menu */
+.menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu li a {
+  display: block;
+  color: var(--color-tertiary);
+  font-size: 4vw; 
+  text-decoration: none;
+  
+}
+
+/* animação do hambúrguer */
+#menu-toggle:checked + .hamburger {
+  transform: rotate(90deg);
+}
+
 
 
    /* ======================== INICIO ======================== */
