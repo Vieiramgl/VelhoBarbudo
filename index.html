@@ -390,6 +390,49 @@
         if (toggle) toggle.checked = false;
       });
     });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuLinks = document.querySelectorAll('.menu a');
+    const body = document.body;
+
+    let scrollPosition = 0;
+
+    function lockScroll() {
+      scrollPosition = window.scrollY;
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollPosition}px`;
+      body.style.left = '0';
+      body.style.right = '0';
+      body.style.width = '100%';
+    }
+
+    function unlockScroll() {
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.top = '';
+      body.style.left = '';
+      body.style.right = '';
+      body.style.width = '';
+      window.scrollTo(0, scrollPosition);
+    }
+
+    // Trava/destrava scroll ao abrir/fechar o menu
+    menuToggle.addEventListener('change', function () {
+      if (this.checked) {
+        lockScroll();
+      } else {
+        unlockScroll();
+      }
+    });
+
+    // Fecha o menu e libera o scroll ao clicar em um link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.checked = false; // desmarca o checkbox
+        unlockScroll(); // garante que o scroll seja liberado
+      });
+    });
   </script>
 </body>
 
